@@ -22,4 +22,24 @@ Rails.application.routes.draw do
     resources :order_items, :only => :update
   end
 
+  scope module: :customer do
+    root to: 'homes#top'
+    get 'home/about' => 'homes#about'
+    resources :items, :only => [:index, :show]
+    resources :cart_items, :only => [:create, :index, :destroy, :update] do
+     collection do #idは必要がないため、memberではなくcollection
+     delete 'destroy_all'
+      end
+    end
+    post 'orders/confirm' => 'orders#confirm'
+    get 'orders/complete' => 'orders#complete'
+    resources :orders, :only => [:new, :create, :index, :show]
+    patch 'customers' => 'customers#update'
+    get 'customers/edit' => 'customers#edit'
+    get 'customers/current_customer' => 'customers#show'
+    get 'customers/check' => 'customers#check'
+    patch 'customers/withdraw' => 'customers#withdraw'
+    resources :shippings, :except => [:new, :show]
+  end
+
 end
