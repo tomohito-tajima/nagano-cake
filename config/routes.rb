@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-  #顧客者側
-  # URL /customers/sign_in ...
+  # #顧客者側
+  # # URL /customers/sign_in ...
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "customer/registrations",
   sessions: 'customer/sessions'
