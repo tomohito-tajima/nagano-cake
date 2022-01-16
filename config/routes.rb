@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # #顧客者側
   # # URL /customers/sign_in ...
   devise_for :customers, skip: [:passwords], controllers: {
-    registrations: "customer/registrations",
-    sessions: 'customer/sessions'
+    registrations: "customers/registrations",
+    sessions: 'customers/sessions'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :order_items, :only => :update
   end
 
-  scope module: :customer do
+  scope module: :customers do
     root to: 'homes#top'
     get 'home/about' => 'homes#about'
     resources :items, :only => [:index, :show]
