@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title">
+    <h4>ログイン</h4>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+      <div class="col-md">
+        <table class="table">
+          <tr class="field">
+            <td><%= f.label :email %></td>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %></td>
+          </tr>
+
+          <tr class="field">
+            <td><%= f.label :encrypted_password %></td>
+            <td><%= f.password_field :encrypted_password, autocomplete: "current-password" %></td>
+          </tr>
+
+          <tr class="actions">
+            <td></td>
+            <td><%= f.submit "ログイン", class: "btn btn-block btn-sm btn-primary" %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <% end %>
+
+  <%#= render "admins/shared/links" %>
+
+</div>

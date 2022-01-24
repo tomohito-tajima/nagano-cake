@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   #管理者側
   # URL /admin/sign_in ...
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
-    sessions: "admin/sessions"
+    sessions: "admins/sessions"
   }
+
+  # devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
+  #   sessions: "admin/sessions"
+  # }
 
   # #顧客者側
   # # URL /customers/sign_in ...
