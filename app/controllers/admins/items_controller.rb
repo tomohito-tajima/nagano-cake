@@ -11,15 +11,21 @@ class Admins::ItemsController < ApplicationController
   end
 
   def index
+    @items = Item.all
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update
+    redirect_to admins_item_path(@item)
   end
 
   def destroy
