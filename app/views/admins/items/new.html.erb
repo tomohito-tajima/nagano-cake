@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="title">
+    <h4>新規会員登録</h4>
+  </div>
+
+  <%= form_with model: @item do |f| %>
+    <div class="row">
+      <div class="col-md">
+        <table class="table">
+          <tr>
+            <td><%= f.label :商品画像 %></td>
+            <td>
+              <%= f.text_field :image_id, autofocus: true, placeholder: "令和" %>
+          </tr>
+
+          <tr>
+            <td><%= f.label :商品名 %></td>
+            <td>
+              <%= f.text_field :name, autofocus: true, placeholder: "商品名" %>
+            </td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :商品説明 %></td>
+            <td><%= f.email_field :introduction, autofocus: true, placeholder: "ここに説明文を記述します" %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :ジャンル %></td>
+            <td><%= f.text_field :genre_id, autofocus: true, placeholder: "0000000" %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :税抜価格 %></td>
+            <td><%= f.text_field :price, autofocus: true, placeholder: "1000" %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :販売ステータス %></td>
+            <td><%= f.text_field :is_active, autofocus: true, autocomplete: "電話番号", placeholder: "00000000000" %></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <div>
+                <%= f.submit "新規登録", class: "btn btn-block btn-sm btn-success" %>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>
