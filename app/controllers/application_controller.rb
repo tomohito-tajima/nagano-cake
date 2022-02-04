@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  before_action :authenticate_admin!, if: :admin_url #pathに/adminが含まれている全てのページは、adminでログインしないと見れない
+  #before_action :authenticate_admin!, if: :admin_url #pathに/adminが含まれている全てのページは、adminでログインしないと見れない
 
   #request.fullpathで、飛んだ先のpathを全て取得します。
   #include?("/admin")で、valと同じ要素が含まれていれば、trueを返します。

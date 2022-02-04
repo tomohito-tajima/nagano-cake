@@ -1,6 +1,6 @@
 <div class="container">
   <div class="title">
-    <h4>新規会員登録</h4>
+    <h4>商品新規登録</h4>
   </div>
 
   <% form_with model: @item do |f| %>
@@ -10,7 +10,7 @@
           <tr>
             <td><%= f.label :商品画像 %></td>
             <td>
-              <%= f..attachment_field  :image_id, autofocus: true %>
+              <%= f.attachment_field :image, autofocus: true %>
             </td>
           </tr>
 
