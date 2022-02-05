@@ -3,8 +3,8 @@
     <h4>商品新規登録</h4>
   </div>
 
-  <% form_with model: @item do |f| %>
-    <div class="row">
+  <div class="row">
+    <%= form_with model: @item do |f| %>
       <div class="col-md">
         <table class="table">
           <tr>
@@ -52,6 +52,6 @@
           </tr>
         </table>
       </div>
+    <% end %>
     </div>
-  <% end %>
 </div>

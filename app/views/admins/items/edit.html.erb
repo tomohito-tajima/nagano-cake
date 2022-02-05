@@ -3,14 +3,15 @@
   <div class="title">
     <h4>商品編集</h4>
   </div>
-  <% form_with model: @item do |f| %>
     <div class="row">
+    <% form_with model: @item do |f| %>
       <div class="col-md">
         <table class="table">
           <tr>
             <td><%= f.label :商品画像 %></td>
             <td>
               <%= f..attachment_field  :image_id, autofocus: true %>
+            </td>
           </tr>
 
           <tr>
@@ -51,6 +52,6 @@
           </tr>
         </table>
       </div>
+    <% end %>
     </div>
-  <% end %>
 </div>
