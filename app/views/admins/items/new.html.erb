@@ -4,7 +4,7 @@
   </div>
 
   <div class="row">
-    <%= form_with model: @item do |f| %>
+    <%= form_with url: "admins_items", method: :post do |f| %>
       <div class="col-md">
         <table class="table">
           <tr>
@@ -23,7 +23,7 @@
 
           <tr>
             <td><%= f.label :商品説明 %></td>
-            <td><%= f.email_field :introduction, autofocus: true, placeholder: "ここに説明文を記述します" %></td>
+            <td><%= f.text_field :introduction, autofocus: true, placeholder: "ここに説明文を記述します" %></td>
           </tr>
 
           <tr>
