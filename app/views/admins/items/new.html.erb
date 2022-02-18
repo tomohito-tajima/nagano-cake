@@ -4,13 +4,13 @@
   </div>
 
   <div class="row">
-    <%= form_with url: "admins_items", method: :post do |f| %>
+    <%= form_with url: "admins_items_path", method: :post do |f| %>
       <div class="col-md">
         <table class="table">
           <tr>
             <td><%= f.label :商品画像 %></td>
             <td>
-              <%= f.attachment_field :image_id, autofocus: true %>
+              <%= f.attachment_field :image, autofocus: true %>
             </td>
           </tr>
 
