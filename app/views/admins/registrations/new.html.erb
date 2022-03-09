@@ -1,9 +1,12 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div style="margin: 30px;">
+    <span style="font-size:20px;background-color:#dcdcdc">新規会員登録</span>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "admins/shared/error_messages", resource: resource %>
-  
-  <div class="row">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "admins/shared/error_messages", resource: resource %>
+
+    <div class="row">
       <div class="col-md">
         <form>
           <table>
@@ -81,6 +84,7 @@
         </form>
       </div>
     </div>
-<% end %>
+  <% end %>
 
-<%= render "admins/shared/links" %>
+<%#= render "admins/shared/links" %>
+</div>
